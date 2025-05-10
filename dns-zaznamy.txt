@@ -1,0 +1,28 @@
+# DNS záznamy pro doménu topwnz.com
+# Pro nasazení na Netlify
+
+# A záznam pro root doménu (topwnz.com)
+A @    75.2.60.5    # Netlify IP adresa
+
+# CNAME záznam pro www subdoménu
+CNAME www    topwnz.netlify.app    # Nahraďte 'topwnz' vaším Netlify site name
+
+# MX záznamy pro email (volitelné)
+# MX @ mail.protonmail.ch 10
+# MX @ mailsec.protonmail.ch 20
+
+# TXT záznamy pro SPF a DKIM (volitelné)
+# TXT @ "v=spf1 include:_spf.protonmail.ch mx ~all"
+# TXT protonmail._domainkey "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA..."
+
+# Netlify DNS verifikační TXT záznam (bude poskytnut Netlify)
+# TXT _netlify-domain-verification "verifikační řetězec od Netlify"
+
+# Nastavení DNSSEC (doporučeno)
+# - Zapněte DNSSEC u vašeho DNS poskytovatele
+
+# Postup pro nasazení:
+# 1. Přidejte doménu v Netlify (Site settings -> Domain management -> Add domain)
+# 2. Nastavte DNS záznamy u vašeho poskytovatele domény
+# 3. Počkejte na propagaci DNS záznamů (může trvat až 48 hodin)
+# 4. Ověřte nastavení pomocí nástroje dig nebo online DNS nástrojů
